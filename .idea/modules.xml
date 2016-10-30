@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/testnodejs.iml" filepath="$PROJECT_DIR$/.idea/testnodejs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ajaxtest.iml" filepath="$PROJECT_DIR$/.idea/ajaxtest.iml" />
     </modules>
   </component>
 </project>

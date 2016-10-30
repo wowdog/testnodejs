@@ -1,12 +1,645 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    테스트
-  </body>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> New Document </title>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/font-awesome-4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/reset.css">
+    <link rel="stylesheet" href="/stylesheets/common.css">
+    <link rel="stylesheet" href="/stylesheets/modal.css">
+    <link rel="stylesheet" href="/stylesheets/tab.css">
+    <link rel="stylesheet" href="/stylesheets/contents.css">
+    <script src="/js/jquery-1.12.4.js"></script>
+    <script src="/js/scrollspy.js"></script>
+    <script src="/js/bootstrap.js"></script>
+</head>
+
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+<!--//둘이 안먹히고 순서에따라 먹히는게 다름-->
+    <header id="myScrollspy">
+        <button type="button" class="navbar-toggle">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <a href="#"><h1 class="active button"><img src="/images/logo.png" alt="mini로고"></h1></a>
+        <ul id="gnb" class="nav ">
+            <li class="active button"></li>
+            <li class="button"><a href="#section2" data-text="MINI소식" alt="INFORMATION">INFORMATION</a></li>
+            <li class="button"><a href="#section3" data-text="MINI장치" alt="EQUIPMENT">EQUIPMENT</a></li>
+            <li class="button"><a href="#section4" data-text="MINI외형" alt="DESIGN">DESIGN</a></li>
+            <li class="button"><a href="#section5" data-text="MINI안전" alt="SAFETY">SAFETY</a></li>
+        </ul>
+
+        <ul id="sns">
+            <li><a href="https://www.facebook.com/MINIKOREA.kr" alt="facebook" target="_blank"><i class="fa fa-facebook-official" ></i></a></li>
+            <li><a href="https://www.instagram.com/mini.korea.official/" alt="instagram" target="_blank"><i class="fa fa-instagram" ></i></a></li>
+            <li><a href="https://www.youtube.com/channel/UCYT6053wcW3_VRWW7N5gptg" alt="youtube" target="_blank"><i class="fa fa-youtube" ></i></a></li>
+        </ul>
+        <button type="button" class="sns"></button>
+        <!--=====스크롤버튼======-->
+        <ul class="nav nav_button">
+            <li class="active button">
+                <a href="#section1" class="tooltip"><span class="tooltiptext">TOP</span></a>
+            </li>
+            <li class="button">
+                <a href="#section2" class="tooltip"><span class="tooltiptext">INFORMATION</span></a>
+            </li>
+            <li class="button">
+                <a href="#section3" class="tooltip"><span class="tooltiptext">EQUIPMENT</span></a>
+            </li>
+            <li class="button">
+                <a href="#section4" class="tooltip"><span class="tooltiptext">DESIGN</span></a>
+            </li>
+            <li class="button">
+                <a href="#section5" class="tooltip"><span class="tooltiptext">SAFETY</span></a>
+            </li>
+        </ul>
+    </header>
+    <div class="skip_nav">
+        <a href="#section2">본문 바로가기</a>
+    </div>
+    <nav id="left_menu">
+        <h1 class="button"><a href="#section1"><img src="/images/logo.png" alt="logo"></a></h1>
+        <ul id="menu">
+            <li class="button"></li>
+            <li class="button"><a href="#section2">INFORMATION</a></li>
+            <li class="button"><a href="#section3">EQUIPMENT</a></li>
+            <li class="button"><a href="#section4">DESIGN</a></li>
+            <li class="button"><a href="#section5">SAFETY</a></li>
+        </ul>
+        <div id="bg_close"></div>
+    </nav>
+    <nav id="right_menu">
+        <ul id="m_sns">
+            <li><a href="#">facebook</a></li>
+            <li><a href="#">instagram</a></li>
+            <li><a href="#">youtube</a></li>
+        </ul>
+    </nav>
+    <script>
+        $(".navbar-toggle").click(function(){
+           $("#left_menu").fadeIn();
+        });
+        $("#bg_close").click(function(){
+                $("#left_menu").hide();
+        });
+        $("button.sns").click(function(){
+            $("#right_menu").slideToggle();
+        })
+    </script>
+    <section id="wrap">
+        <div id="section1" class="contents">
+            <div class="relative">
+                <div class="car_info">
+                    <dl>
+                        <dt>MINI COOPER D.</dt>
+                        <dd>NOW WITH 67%
+                            <br>MORE DOORS.
+                        </dd>
+                        <dd>
+                            <span>FROM</span>
+                            <span>￦ 30,600,000</span>
+                            <p>
+                                도어가 많아졌다고 해서 본래의 매력이 줄어든 것은
+                                <br> 절대 아닙니다. 실제로, MINI 5 DOOR는
+                                <br> 아주 잘 빠진 COUPÉ를 운전할 때와 다름없는
+                                <br> 흥분을 선사합니다.
+                                <br> 이 멋진 차는 조금 길어진 휠베이스로
+                                <br> 독특한 공간 분위기도 선사하고,
+                                <br> MINI의 성격을 전혀 새로운
+                                <br> 방식으로 해석합니다.
+                            </p>
+                        </dd>
+                    </dl>
+                </div>
+                <img src="/images/p1_car.png" alt="car">
+            </div>
+        </div>
+        <div id="section2" class="contents">
+            <h2>INFORMATION.</h2>
+            <!--<div class="info_modalbg"><span class="close">&times;</span></div>-->
+            <div class="info_modal">
+                <h3>TECHNICAL INFO.</h3>
+                <a href="#" class="close">&times;</a>
+                <p>스포츠 스티어링 휠을 꽉 잡고 미사일처럼 돌진할 준비를 하십시오. MINI COOPER S 5 DOOR는 가속페달을 힘차게 밟으면 정지 상태에서 단 6.8초만에 100km/h에 도달하고 최고 230km/h까지 속도를 높입니다. 정말로 빠르다는 것이 무엇인지 체험하게 될 것입니다.</p>
+                <h4>PERFORMANCE DATA.</h4>
+                <ul class="info_table first">
+                        <li class="li_head first"> 길이</li>
+                        <li>
+                            <p>전장/전폭/전고(mm)</p>
+                            <p>4005 / 1727 / 1425</p>
+                        </li>
+                        <li>
+                            <p>휠베이스(mm)</p>
+                            <p>2567</p>
+                        </li>
+                </ul>
+                <ul class="info_table first">
+                        <li class="li_head first">엔진</li>
+                        <li>
+                            <p>엔진 형식</p>
+                            <p>직렬 4기통 밸브트로닉 트윈파워 터보 엔진</p>
+                        </li>
+                        <li>
+                            <p>배기량 (cc)</p>
+                            <p>1998</p>
+                        </li>
+                        <li>
+                            <p>최고 출력/최고엔진 회전수 (kw/hp/rpm)</p>
+                            <p>141 / 192 / 4700-6000</p>
+                        </li>
+                        <li>
+                            <p>최대 토크/엔진 회전수 (kg.m/ 1/min)</p>
+                            <p>28.6/1250 **(30.6/1250-4750)</p>
+                        </li>
+                </ul>
+                <ul class="info_table second">
+                        <li class="li_head second">성능</li>
+                        <li>
+                            <p>최고속도 (km/h)</p>
+                            <p>230</p>
+                        </li>
+                        <li>
+                            <p>0-100 km/h 가속시간 (sec)</p>
+                            <p>6.8</p>
+                        </li>
+                </ul>
+                <ul class="info_table second">
+                    <li class="li_head second">휠</li>
+                    <li>
+                        <p>앞/뒤 타이어 치수</p>
+                        <p>205/45 R17</p>
+                    </li>
+                    <li>
+                        <p>앞/뒤 휠 치수</p>
+                        <p>7J X 17 LIGHT ALLOY</p>
+                    </li>
+                </ul>
+                <ul class="info_table third">
+                    <li class="li_head third">연비</li>
+                    <li>
+                        <p>복합 연비 (km/l)</p>
+                        <p>12.8</p>
+                    </li>
+                    <li>
+                        <p>도심주행 연비 (km/l)</p>
+                        <p>11.8</p>
+                    </li>
+                    <li>
+                        <p>고속도로주행 연비 (km/l)</p>
+                        <p>14.3</p>
+                    </li>
+                    <li>
+                        <p>에너지 소비효율 등급</p>
+                        <p>3</p>
+                    </li>
+                    <li>
+                        <p>이산화탄소 배출량 (g/km)</p>
+                        <p>135</p>
+                    </li>
+                    <li>
+                        <p>연료탱크 용량(liter, 대략)</p>
+                        <p>44</p>
+                    </li>
+                </ul>
+                <ul class="info_table third">
+                    <li class="li_head third">중량</li>
+                    <li>
+                        <p>공차중량 (kg)</p>
+                        <p>1,240</p>
+                    </li>
+                    <li>
+                        <p>차량 총 중량 (kg)</p>
+                        <p>1,565</p>
+                    </li>
+                    <li>
+                        <p>허용 루프 하중 (kg)</p>
+                        <p>75</p>
+                    </li>
+                    <li class="price">
+                        <p>권장소비자 가격 (원, VAT 포함)</p>
+                        <p>30,900,000</p>
+                    </li>
+                </ul>
+                <p>
+                    * 차량의 노후 정도 등에 따라 실제 주행 연비와 차이가 있을 수 있습니다.<br><br>
+                    * MINI 차량의 공인연비, 등급정보 및 이산화탄소 배출량에 대한 보다 자세한 내용은 MINI 전시장에 문의하시거나 에너지 관리공단 수송에너지 홈페이지를 참조하시기 바랍니다.<br>
+                    (<a href="http://bpm.kemco.or.kr/transport" target="_blank">http://bpm.kemco.or.kr/transport</a>)
+                </p>
+            </div>
+            <dl>
+                <dt>TECHNICAL INFO.</dt>
+                <dd>
+                    <a href="#">도어가 많아지고, 성능이 향상되었습니다.
+                    <span><br> 디젤 고카트 경주차 MINI COOPER D 5 DOOR MIDTRIM은 가속페달을 끝까지 밟았을 때 정확히 9.5초 후에 100km/h를 돌파하며, 계속해서 202km/h의
+                    최고속도까지 달릴 수 있습니다.
+                    <br>게다가 복합 연비가 무려 19 km/l 나 됩니다.</span>
+                    <br><br>more info
+                    </a>
+                </dd>
+            </dl>
+            <img src="/images/p2_car.png" alt="">
+        </div>
+        <div id="section3" class="contents">
+            <h2>EQUIPMENT.</h2>
+            <div class="slide_content">
+                <img class="mySlides" src="/images/p3_car1.png">
+                <ul>
+                    <li id="zoomin01" class="zoomin" style="cursor:zoom-in;cursor: -webkit-zoom-in"></li>
+                    <li id="zoomin02" class="zoomin" style="cursor:zoom-in;cursor: -webkit-zoom-in"></li>
+                    <li id="zoomin03" class="zoomin" style="cursor:zoom-in;cursor: -webkit-zoom-in"></li>
+                </ul>
+                <div id="modal01" style="z-index:3">
+                    <a href="#" class="close">&times;</a>
+                    <div>
+                        <img id="modalImg01" src="/images/p3_headlight.png" style="width:100%;">
+                        <p><strong>FRONT HEADLIGHTS.</strong> 새로 디자인된 헤드라이트는 MINI의 전형적인 크롬 링을 두르고 MINI COOPER D 5 DOOR
+                            MIDTRIM에 빛나는 존재감을 불어 넣습니다.</p>
+                    </div>
+                </div>
+                <div id="modal02" style="z-index:3">
+                    <a href="#"  class="close">&times;</a>
+                    <div>
+                        <img id="modalImg02" src="/images/p3_tire.jpg" style="width:100%;">
+                        <p><strong>WHEEL.</strong>MINI COOPER D 5 DOOR MIDTRIM에는 15“ HELI SPOKE LIGHT ALLOY WHEEL이 제공 됩니다.
+                        </p>
+                    </div>
+                </div>
+                <div id="modal03" style="z-index:3">
+                    <a href="#"  class="close">&times;</a>
+                    <div>
+                        <img id="modalImg03" src="/images/p3_spoiler.jpg" style="width:100%;">
+                        <p><strong>SPOILER.</strong> MINI의 스포츠 유산을 상기시키는 리어 스포일러가 루프에 통합되어 있어 MINI COOPER D 5 DOOR MIDTRIM의
+                            스포티한 매력이 한층 더 돋보입니다.</p>
+                    </div>
+                </div>
+
+                <img class="mySlides" src="/images/p3_car2.png">
+
+                <div class="padding section">
+                    <div class="col s2 i1">
+                        <img class="demo border hover-shadow" src="/images/p3_car1.png" onclick="currentDiv(1)">
+                    </div>
+                    <div class="col s2 i2">
+                        <img class="demo border hover-shadow" src="/images/p3_car2.png" onclick="currentDiv(2)">
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                ///두번째큰이미지나오는 효과
+                var slideIndex = 1;
+                showDivs(slideIndex);
+
+                function plusDivs(n) {
+                    showDivs(slideIndex += n);
+                }
+
+                function currentDiv(n) {
+                    showDivs(slideIndex = n);
+                }
+
+                function showDivs(n) {
+                    var i;
+                    var x = document.getElementsByClassName("mySlides");
+                    var dots = document.getElementsByClassName("demo");
+                    if (n > x.length) {
+                        slideIndex = 1
+                    }
+                    if (n < 1) {
+                        slideIndex = x.length
+                    }
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                        //
+                    }
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" border-red", "");
+                    }
+                    x[slideIndex - 1].style.display = "block";
+                    dots[slideIndex - 1].className += " border-red";
+                }
+            </script>
+        </div>
+        <div id="section4" class="contents">
+            <script src="/js/jquery.reel.js"></script>
+            <h2>DESIGN.</h2>
+            <div class="design">
+                <ul>
+                    <li class="PapperWhite"><a href=""></a></li>
+                    <li class="BlazingRed"><a href=""></a></li>
+                    <li class="ElectricBlue"><a href=""></a></li>
+                    <li class="VolcanicOrange"><a href=""></a></li>
+                </ul>
+
+                <img src="/images/reel/angle01.png" class="reel" id="image" data-images="/images/reel/angle##.png|01..36"
+                     data-responsive="true">
+                <img class="guide" src="/images/design_guide.png" alt="마우스로 차량이미지를 돌려 볼수 있습니다.">
+            </div>
+        </div>
+        <div id="section5">
+            <h2>SAFETY.</h2>
+            <div class="top">
+                <div class="dsc">
+                    <img src="/images/p5_1.png" alt="">
+                    <dl>
+                        <dt>DSC.</dt>
+                        <dd>다이내믹 스태빌리티 컨트롤(DSC: Dynamic Stability Control)은 엔진 관리 시스템에 개입하고 필요에 따라 앞/뒤 바퀴에 개별적인 제동력을 가하여
+                            불안정한 주행 상황을 방지합니다. 또한 힐 어시스트(Hill assist) 기능도 포함합니다.
+                        </dd>
+                    </dl>
+                </div>
+                <div class="move">
+                    <div class="container">
+                        <img src="/images/p3_car1.png" alt="">
+                        <div class="road">
+                            <div class="move1">
+                                <p class="r1"></p>
+                                <p class="r2"></p>
+                                <p class="r3"></p>
+                                <p class="r4"></p>
+                            </div>
+                            <div class="move2">
+                                <p class="r1"></p>
+                                <p class="r2"></p>
+                                <p class="r3"></p>
+                                <p class="r4"></p>
+                            </div>
+                            <div class="move3">
+                                <p class="r1"></p>
+                                <p class="r2"></p>
+                                <p class="r3"></p>
+                                <p class="r4"></p>
+                            </div>
+                        </div>
+                        <div class="reel1">
+                            <i></i>
+                        </div>
+                        <div class="reel2">
+                            <i></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom">
+                <div class="dtc">
+                    <img src="/images/p5_2.png" alt="">
+                    <dl>
+                        <dt>DTC.</dt>
+                        <dd>다이내믹 트랙션 컨트롤(DTC: Dynamic Traction Control)은 운전자가 MINI의 자기 조향 특성을 적극적으로 이용할 수 있도록 돕습니다. 전자식 디퍼렌셜
+                            록 컨트롤(EDLC: Electronic Differential Lock Control)은 선회시 안쪽 바퀴의 과도한 슬립을 감지하고 브레이크를 가하여, 굴곡이 있거나
+                            노면이 불규칙한 도로에서도 최적의 핸들링을 보장합니다.
+                        </dd>
+                    </dl>
+                </div>
+                <div class="airbags">
+                    <img src="/images/p5_3.png" alt="">
+                    <dl>
+                        <dt>AIRBAGS.</dt>
+                        <dd>만일의 충돌사고가 발생하면, 즉시 완충재로 감싸진 안전 셀로 변신합니다. 즉, 앞/뒤에 총 6개의 에어백이 설치되며, 충격 방향에 따라 에어백이
+                            전개됩니다. 새로운 MINI에 장착된 사이드 커튼 에어백은 측면에서 가해지는 충격 및 날아다니는 유리 파편으로부터 탑승자를 보호합니다. 마지막으로, 시트벨트 텐셔너가 당신과
+                            승객을 제자리에 고정시켜 대시보드와 앞좌석에 부딪히지 않도록 조치합니다.
+                        </dd>
+                    </dl>
+                </div>
+                <div class="high-tech">
+                    <img src="/images/p5_4.png" alt="">
+                    <dl>
+                        <dt>HIGH-TECH STEELS.</dt>
+                        <dd>고강도 및 초고강도 다상조직 강철. 초고강도 열간성형 강철. 이들보다 당신을 더 안전하게 보호할 수 있는 소재는 아마도 없을 것입니다. 이 강력한 강철은 무게를 최소화하고
+                            강도를 최대한 높여 제작한 것으로, 충돌 사고시 당신을 안전하게 지키는 것이 유일한 설계 목적입니다.
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+        <footer id="section6">
+            <div class="navi">
+                <div class="top_navi">
+                    <dl class="menu">
+                        <dt>MODELS.</dt>
+                        <dd><a href="#">MINI 3 DOOR</a></dd>
+                        <dd><a href="#">MINI 5 DOOR</a></dd>
+                        <dd><a href="#">MINI CLUBMAN</a></dd>
+                        <dd><a href="#">MINI COUPE</a></dd>
+                        <dd><a href="#">MINI COUNTRYMAN</a></dd>
+                        <dd><a href="#">MINI CONVERTIBLE</a></dd>
+                    </dl>
+
+                    <dl class="menu">
+                        <dt>DISCOVER.</dt>
+                        <dd><a href="#">MINI SPECIAL OFFER</a></dd>
+                        <dd><a href="#">MINI NEWS</a></dd>
+                        <dd><a href="#" target="_blank">MINI DRIVING CENTER</a></dd>
+                    </dl>
+
+                    <dl class="menu">
+                        <dt>ACCESSORIES.</dt>
+                        <dd><a href="#">MINI ACCESSORIES</a></dd>
+                        <dd><a href="#">MINI COLLECTION</a></dd>
+                    </dl>
+
+                    <dl class="menu">
+                        <dt>SERVICE.</dt>
+                        <dd><a href="#">MINI SERVICE INFORMATION</a></dd>
+                        <dd><a href="#">MSI XL, FIX WARRANTY</a></dd>
+                        <dd><a href="#">PARTS INFORMATION</a></dd>
+                        <dd><a href="#" target="_blank">MINI INVOICE HOTLINE</a></dd>
+                        <dd><a href="#" target="_blank">부품 가격 조회</a></dd>
+                    </dl>
+
+                    <dl class="menu">
+                        <dt>ETC.</dt>
+                        <dd><a href="#">CONTACTS</a></dd>
+                    </dl>
+
+                    <ul class="sevice_menu">
+                        <li><a href="#" class="icon_01"><i class="fa fa-car"></i>ALL MODELS<br>OVERVIEW</a></li>
+                        <li><a href="#" class="icon_03"><i class="fa fa-heart"></i>BE WITH<br>MINI</a></li>
+                        <li><a href="#" class="icon_05"><i class="fa fa-user"></i>MINI<br>SHOWROOM</a></li>
+                        <li><a href="#" class="icon_06"><i class="fa fa-map-marker"></i>MINI<br>SERVICE CENTER</a></li>
+                    </ul>
+                </div>
+                <div class="bottom_foot">
+                    <p class="tit">비엠더블유코리아 ㈜</p>
+
+                    <div class="warn_copy">
+                        <address>주소 : 서울특별시 중구 퇴계로 100 (회현동)</address>
+                        <span>&divonx; 웹사이트 상에 사용된 이미지들은 국내에 적용된 사양과 상이할 수 있습니다. </span>
+                        <span>COPYRIGHT &copy; 2014 BMW KOREA. ALL RIGHTS RESERVED.</span>
+                    </div>
+
+                    <div class="lig_menu first">
+                        <a href="#" class="start">LEGAL NOTICE</a>
+                        <a href="#" class="center"><strong>개인정보 처리 방침</strong></a>
+                        <a href="http://www.bmwgroup.com/" class="end" target="_blank">BMW GROUP WEBSITE</a>
+                    </div>
+                    <div class="lig_menu policy">
+                        <a href="#"><strong>영상정보처리기기 운영•관리 방침</strong></a>
+                    </div>
+                    <div class="lig_menu policy">
+                        <a id="footer_notice_link" href="#"
+                           onclick="mini_popup_1 = mini_popup(true,'http://mini.co.kr/mini/main/popup/mini_privacy_policy_popup.html',400,500,'100px','100px','popup1'); return false;"
+                           target="_blank" style="color:white"><strong>공지사항</strong> - MINI ‘개인정보 처리위탁’ 관련 변경사항 안내</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <!--시승신청-->
+    <article>
+        <button id="myBtn">시승신청</button>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close">×</a>
+                    <h2>시승을 원하시는 차량과 장소를 골라주시고 개인정보를 입력해주세요.</h2>
+                </div>
+                <div class="modal-body">
+                    <ul class="tabs">
+                        <li class="active1 active"><a href="#tab1" class="active">시승정보 입력</a></li>
+                        <li class="active2"><a href="#tab2">개인정보 입력</a></li>
+                        <li class="active3"><a href="#tab3">신청확인</a></li>
+                    </ul>
+
+                    <div class="tab">
+                        <div id="tab1" class="">
+                            <p>
+                                <input class="chked" type="checkbox" checked disabled>본 신청은 차량 구매에 앞서 MINI의 성능/디자인/승차감을 확인할 수 있는 30분 내외의 시승 및 차량소개 프로그램으로 영업사원 또는 해당 전시장에서 예약을 위해 연락을 드릴 예정입니다.
+                            </p>
+                            <hr>
+                            <h3>관심모델</h3>
+                            <ul>
+                                <li>
+                                    <img src="/images/mini_clubman.png" alt="">
+                                    <input type="radio" name="car" id="car1" value="MINI clubman">
+                                    <label for="car1" class="car radio">MINI clubman </label>
+                                </li>
+                                <li>
+                                    <img src="/images/mini_3_door.png" alt="">
+                                    <input type="radio" name="car" id="car2" value="MINI 3 DOOR">
+                                    <label for="car2" class="car radio">MINI 3 DOOR </label>
+                                </li>
+                                <li>
+                                    <img src="/images/mini_5_door.png" alt="">
+                                    <input type="radio" name="car" id="car3" value="MINI 5 DOOR">
+                                    <label for="car3" class="car radio">MINI 5 DOOR </label>
+                                </li>
+                                <li>
+                                    <img src="/images/mini_jcw.png" alt="">
+                                    <input type="radio" name="car" id="car4" value="MINI JCW">
+                                    <label for="car4" class="car radio">MINI JCW </label>
+                                </li>
+                                <li>
+                                    <img src="/images/mini_countryman.png" alt="">
+                                    <input type="radio" name="car" id="car5" value="MINI COUNTRYMAN">
+                                    <label for="car5" class="car radio">MINI COUNTRYMAN </label>
+                                </li>
+                                <li>
+                                    <img src="/images/mini_convertible.png" alt="">
+                                    <input type="radio" name="car" id="car6" value="MINI CONVERTIBLE">
+                                    <label for="car6" class="car radio">MINI CONVERTIBLE </label>
+                                </li>
+                            </ul>
+                            <hr>
+                            <h3>전시장</h3>
+                            <select id="test_select" class="dropup" aria-expanded="false" name="test_select"
+                                    onchange="locationSelect(this.value);">
+                                <option value="">시승지역</option>
+                                <option value="서울">서울</option>
+                                <option value="경기">경기</option>
+                                <option value="인천">인천</option>
+                                <option value="부산">부산</option>
+                                <option value="창원">창원</option>
+                                <option value="울산">울산</option>
+                                <option value="대구">대구</option>
+                                <option value="대전">대전</option>
+                                <option value="광주">광주</option>
+                                <option value="제주">제주</option>
+                            </select>
+                            <select id="location">
+                                <option value="지역을 선택하세요">지역을 선택하세요</option>
+                            </select>
+                            <p class="next">
+                                <input type="button" value="NEXT" id="next">
+                            </p>
+                        </div>
+
+                        <div id="tab2" class="">
+                            <p>고객님의 편안한 시승에 도움을 드리기 위해 연락처 정보를 입력해 주세요.</p>
+                            <hr>
+
+                            <div class="form_input">
+                                <span>
+                                    <label class="title" for="name"><i class="fa fa-user"></i></label><input type="text" name="name" id="name" class="inpt" required="required" placeholder="이름"><label class="hidden" for="name">이름을 정확히 입력해주세요.</label><div class="essencial">필수 정보입니다. </div></span> <span><label class="title" for="tel"><i class="fa fa-phone"></i></label><input type="tel" name="tel" id="tel" class="inpt" required="required" placeholder="연락처(휴대폰)"><label class="hidden">'-'을 빼고 입력해주세요.</label><div class="essencial">필수 정보입니다. </div></span> <span><label class="title" for="email"><i class="fa fa-envelope"></i></label><input type="email" name="email" id="email" class="inpt" required="required" placeholder="e-mail"><label class="hidden" for="email">이메일 주소를 다시 확인해주세요.</label><div class="essencial">필수 정보입니다. </div>
+                                </span>
+                            </div>
+                            <div class="form_input">
+                                <hr>
+                                <div id="birthYear">
+                                    <span><label class="title" for="b_year"><i class="fa fa-birthday-cake"></i></label><input type="number" name="b_year" id="b_year" class="inpt" required="required" placeholder="출생연도" min="0"></span>
+                                </div>
+
+                                <div class="gender">
+                                    <input type="radio" value="m" id="male" name="gender" checked/>
+                                    <label for="male" class="radio">Male</label>
+                                    <input type="radio" value="f" id="female" name="gender"/>
+                                    <label for="female" class="radio">Female</label>
+                                </div>
+
+                                <ul style="line-height: 27px;">
+                                    <li class="etc_check check_last "><a href="http://mini.co.kr/mini/etc/privacy2.jsp" target="_blank">개인정보 취급위탁 고지</a></li>
+                                    <li class="like_check all_check "><input type="checkbox"><strong>모두동의 </strong>(개인정보
+                                        수집 및 이용, 제 3자 제공 동의에 모두 동의합니다.)
+                                    </li>
+                                    <li class="like_check etc_check "><input type="checkbox">개인정보 수집, 이용동의 (필수)</li>
+                                    <li class="like_check etc_check "><input type="checkbox">개인정보 제 3자 제공 동의 (필수)</li>
+                                    <br class="active">
+                                </ul>
+                            </div>
+
+                            <div class="submit-wrap">
+                                <input id="drivingTestApplyBtn" type="button" value="신청하기" class="submit">
+                            </div>
+                        </div>
+
+                        <div id="tab3" class="">
+                            <p>시승 신청하신 내용을 확인할 수 있습니다.</p>
+                            <hr>
+                            <form method="post" id="confirm">
+                                <fieldset>
+                                    <div class="member">
+                                        <label class="title" for="email"><i class="fa fa-envelope"></i></label><input type="text" placeholder="이메일" name="mem_email">
+                                    </div>
+                                    <div class="member">
+                                        <label class="title" for="tel"><i class="fa fa-phone"></i></label><input type="text" placeholder="연락처(휴대폰)" name="mem_phone">
+                                    </div>
+                                    <a href="#" id="output">
+                                        <input type="button" value="신청확인" class="submit">
+                                    </a>
+                                    <div class="output"></div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <script src="/js/modal.js"></script>
+    <script>
+
+
+    </script>
+    <script src="/js/tab.js"></script>
+    <script src="/js/action.js"></script>
+</body>
 </html>

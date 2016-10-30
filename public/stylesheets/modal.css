@@ -1,0 +1,117 @@
+#myBtn{
+    position:fixed;
+    top:50%;
+    margin-top:0%;
+    left:0;
+    padding:0;
+    width:20px;
+    text-decoration: none;
+    display: inline-block;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+}
+
+#myBtn:hover, #myBtn:focus {
+    background-color: #555555;
+    color: white;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 4;
+    left: 0;
+    top: 0;
+    width: 90%;
+    height: 100%;
+    overflow: auto;
+    /*background-color: rgba(0, 0, 0, 0.4);*/
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    /*top:50%;
+    margin-top:-10%;*/
+    /*top:50%;
+    transform:translateY(-50%);*/
+    margin-top: 60px;
+    padding: 0;
+    border: 1px solid #888;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animateleft;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animateleft;
+    animation-duration: 0.4s;
+}
+
+.modal-header {
+    padding: 17px 40px;
+    background-color: #333;
+    color: white;
+}
+
+
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+
+
+.close {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    -webkit-transition: all ease 0.50s;
+    transition: all ease 0.75s;
+    border:0;
+    border-radius: 15px;
+    background: #999;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    font-size: 26px;
+    text-align: center;
+    line-height: 100%;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+@-webkit-keyframes animateleft {
+    from {
+        left: -300px;
+        opacity: 0
+    }
+    to {
+        left: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animateleft {
+    from {
+        left: -300px;
+        opacity: 0
+    }
+    to {
+        left: 0;
+        opacity: 1
+    }
+}
